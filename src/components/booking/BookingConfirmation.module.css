@@ -1,0 +1,244 @@
+.confirmation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 24px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.successIcon {
+  margin-bottom: 16px;
+  filter: drop-shadow(0 0 20px rgba(74, 222, 128, 0.4));
+}
+
+.successText {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  font-size: 15px;
+  color: var(--color-text-secondary);
+}
+
+/* Ticket */
+.ticket {
+  width: 100%;
+  background: linear-gradient(135deg, #0f0f22, #151530);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(220, 38, 38, 0.15);
+  margin-bottom: 32px;
+}
+
+.ticketHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  background: linear-gradient(90deg, rgba(220, 38, 38, 0.2) 0%, rgba(124, 58, 237, 0.1) 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.ticketLogo {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-crimson-light);
+  letter-spacing: 1px;
+}
+
+.ticketId {
+  font-size: 12px;
+  color: var(--color-text-secondary);
+  font-family: monospace;
+}
+
+.ticketBody {
+  display: flex;
+  padding: 24px;
+  gap: 0;
+}
+
+.ticketLeft {
+  flex: 1;
+}
+
+.movieTitle {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: 20px;
+}
+
+.ticketDetails {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.detail {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.detailIcon {
+  color: var(--color-crimson);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.detailLabel {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--color-text-secondary);
+  margin-bottom: 2px;
+}
+
+.detailValue {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.totalRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  font-size: 14px;
+  color: var(--color-text-secondary);
+}
+
+.total {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--color-gold);
+}
+
+/* Separator */
+.separator {
+  width: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  margin: 0 16px;
+  flex-shrink: 0;
+}
+
+.notchTop, .notchBottom {
+  width: 20px;
+  height: 10px;
+  background: var(--color-bg-primary);
+  border-radius: 0 0 20px 20px;
+}
+
+.notchTop {
+  border-radius: 20px 20px 0 0;
+}
+
+.dashes {
+  flex: 1;
+  border-left: 2px dashed rgba(255, 255, 255, 0.08);
+  margin: 4px 0;
+}
+
+/* QR */
+.qrSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.qrWrap {
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.qrLabel {
+  font-size: 11px;
+  color: var(--color-text-secondary);
+}
+
+.qrCode {
+  font-family: monospace;
+  font-size: 9px;
+  color: var(--color-text-secondary);
+  letter-spacing: 1px;
+}
+
+/* Footer */
+.ticketFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+  background: rgba(255, 255, 255, 0.02);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Actions */
+.actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@media (max-width: 600px) {
+  .ticketBody {
+    flex-direction: column;
+  }
+
+  .separator {
+    flex-direction: row;
+    width: auto;
+    height: 24px;
+    margin: 12px 0;
+  }
+
+  .notchTop, .notchBottom {
+    width: 10px;
+    height: 20px;
+    border-radius: 0 20px 20px 0;
+  }
+
+  .notchBottom {
+    border-radius: 20px 0 0 20px;
+  }
+
+  .dashes {
+    border-left: none;
+    border-top: 2px dashed rgba(255, 255, 255, 0.08);
+    flex: 1;
+    margin: 0 4px;
+  }
+
+  .qrSection {
+    align-self: center;
+  }
+
+  .ticketDetails {
+    grid-template-columns: 1fr;
+  }
+}

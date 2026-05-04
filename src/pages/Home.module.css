@@ -1,0 +1,336 @@
+.home {}
+
+/* Stats Bar */
+.statsBar {
+  background: var(--color-bg-secondary);
+  border-bottom: 1px solid var(--color-border);
+  padding: 20px 0;
+}
+
+.statsInner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.statCard {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.statIcon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.statValue {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  line-height: 1;
+}
+
+.statLabel {
+  font-size: 12px;
+  color: var(--color-text-secondary);
+  margin-top: 4px;
+}
+
+/* Sections */
+.section {
+  padding: 60px 0;
+}
+
+.sectionRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 32px;
+  gap: 16px;
+}
+
+.sectionHeader {
+  max-width: 600px;
+}
+
+.sectionBadge {
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+.sectionTitle {
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  position: relative;
+  padding-left: 16px;
+}
+
+.sectionTitle::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 70%;
+  background: var(--color-crimson);
+  border-radius: var(--radius-full);
+}
+
+.sectionTitle.centered {
+  padding-left: 0;
+  text-align: center;
+}
+
+.sectionTitle.centered::before {
+  display: none;
+}
+
+.sectionSubtitle {
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  margin-top: 6px;
+}
+
+/* Movie Scroll Row */
+.scrollRow {
+  overflow-x: auto;
+  padding-bottom: 12px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-crimson-dark) transparent;
+}
+
+.movieRow {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+}
+
+/* Featured Banner */
+.featuredBanner {
+  position: relative;
+  padding: 80px 24px;
+  overflow: hidden;
+  margin: 20px 0;
+}
+
+.bannerBg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(220,38,38,0.15) 0%, rgba(124,58,237,0.15) 100%);
+  border-top: 1px solid rgba(220,38,38,0.2);
+  border-bottom: 1px solid rgba(124,58,237,0.2);
+}
+
+.bannerContent {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.bannerLeft .badge {
+  margin-bottom: 16px;
+  display: inline-block;
+}
+
+.bannerTitle {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.bannerDesc {
+  font-size: 15px;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+  margin-bottom: 28px;
+}
+
+.bannerRight {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.bannerCard {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  backdrop-filter: blur(10px);
+  transition: all var(--transition-base);
+}
+
+.bannerCard:hover {
+  border-color: rgba(220,38,38,0.3);
+  background: rgba(220,38,38,0.05);
+  transform: translateX(8px);
+}
+
+.bannerCardIcon {
+  width: 56px;
+  height: 56px;
+  background: rgba(220, 38, 38, 0.15);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-crimson);
+  flex-shrink: 0;
+}
+
+.bannerCardTitle {
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--color-text-primary);
+  margin-bottom: 4px;
+}
+
+.bannerCardSub {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+}
+
+/* Features Section */
+.featuresSection {
+  padding: 80px 0;
+  background: var(--color-bg-secondary);
+  border-top: 1px solid var(--color-border);
+}
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.featureCard {
+  padding: 28px;
+  transition: all var(--transition-base);
+}
+
+.featureIcon {
+  width: 52px;
+  height: 52px;
+  background: rgba(220, 38, 38, 0.15);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-crimson);
+  margin-bottom: 16px;
+}
+
+.featureTitle {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.featureDesc {
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+/* CTA Section */
+.ctaSection {
+  padding: 100px 24px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.ctaGlow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 400px;
+  background: radial-gradient(ellipse at center, rgba(220,38,38,0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.ctaInner {
+  max-width: 700px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.ctaTitle {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 700;
+  margin-bottom: 16px;
+  background: linear-gradient(135deg, #f0f0f5, #ef4444);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.ctaDesc {
+  font-size: 16px;
+  color: var(--color-text-secondary);
+  margin-bottom: 36px;
+}
+
+.ctaBtns {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .statsInner {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .featuresGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .bannerContent {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .statsInner {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .featuresGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .section {
+    padding: 40px 0;
+  }
+}
