@@ -1,16 +1,71 @@
-# React + Vite
+# CineX - Cinema Booking App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+CineX is a React-based cinema booking platform with user and admin flows:
+- Explore movies with posters, trailers, and ratings
+- Book seats and complete checkout
+- Manage wishlist/favorites
+- Admin dashboard for movies, users, bookings, and analytics
 
-Currently, two official plugins are available:
+## Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- React + Vite
+- Redux Toolkit
+- React Router
+- Framer Motion
+- Recharts
 
-## React Compiler
+## Quick Start
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+npm install
+npm run dev
+```
 
-## Expanding the ESLint configuration
+Add OMDb API key for movie posters:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+# .env
+VITE_OMDB_API_KEY=your_omdb_api_key
+```
+
+Build for production:
+
+```bash
+npm run build
+npm run preview
+```
+
+## Project Structure
+
+```text
+src/
+  components/     UI and feature components
+  pages/          route pages
+  layouts/        application layouts
+  slices/         Redux state slices
+  data/           app seed/movie data
+  services/       API-like service helpers
+  hooks/          custom hooks
+  utils/          utility helpers
+```
+
+## Movie Images API Handling
+
+Movie images are now handled through a centralized service:
+
+- `src/services/imageService.js`
+  - TMDB image endpoint builder (`https://image.tmdb.org/t/p/...`)
+  - OMDb poster endpoint (`http://img.omdbapi.com/?apikey=...&i=...`)
+  - YouTube trailer thumbnail fallback (`https://img.youtube.com/vi/...`)
+  - broken-link recovery per movie ID
+- `src/data/movies.js`
+  - uses `resolveMovieImages()` to normalize poster/backdrop for every movie
+- `src/components/movies/HeroCarousel.jsx`
+  - uses `backdrop` first and falls back to `poster` on image error
+
+This gives stable image rendering even when external poster links expire.
+
+## Notes
+
+- The project currently uses local mocked data and local storage.
+- `src/services/apiService.js` is structured to be replaced with real backend APIs later.
